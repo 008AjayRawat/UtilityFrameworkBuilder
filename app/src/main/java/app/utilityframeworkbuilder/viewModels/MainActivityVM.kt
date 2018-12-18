@@ -15,6 +15,7 @@ class MainActivityVM : ViewModel() {
         //TODO can call service in android using repository pattern...
         mUserRepo.getUser(1, object : RepoCallback {
             override fun onResponse(response: BaseRepoResponse) {
+                //TODO
             }
 
             override fun onFailure(t: Throwable) {
