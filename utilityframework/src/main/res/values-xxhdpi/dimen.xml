@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="dp_1">10dp</dimen>
+    <dimen name="dp_2">10dp</dimen>
+    <dimen name="dp_3">10dp</dimen>
+    <dimen name="dp_4">10dp</dimen>
+    <dimen name="dp_5">10dp</dimen>
+    <dimen name="dp_6">10dp</dimen>
+    <dimen name="dp_7">10dp</dimen>
+    <dimen name="dp_8">10dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_12">10dp</dimen>
+    <dimen name="dp_14">10dp</dimen>
+    <dimen name="dp_15">10dp</dimen>
+    <dimen name="dp_16">10dp</dimen>
+    <dimen name="dp_18">10dp</dimen>
+    <dimen name="dp_20">10dp</dimen>
+    <dimen name="dp_22">10dp</dimen>
+    <dimen name="dp_25">10dp</dimen>
+    <dimen name="dp_28">10dp</dimen>
+    <dimen name="dp_30">10dp</dimen>
+    <dimen name="dp_32">10dp</dimen>
+    <dimen name="dp_35">10dp</dimen>
+    <dimen name="dp_36">10dp</dimen>
+    <dimen name="dp_38">10dp</dimen>
+    <dimen name="dp_40">10dp</dimen>
+    <dimen name="dp_42">10dp</dimen>
+    <dimen name="dp_45">10dp</dimen>
+    <dimen name="dp_46">10dp</dimen>
+    <dimen name="dp_48">10dp</dimen>
+    <dimen name="dp_50">10dp</dimen>
+    <dimen name="dp_52">10dp</dimen>
+    <dimen name="dp_54">10dp</dimen>
+    <dimen name="dp_55">10dp</dimen>
+    <dimen name="dp_56">10dp</dimen>
+    <dimen name="dp_58">10dp</dimen>
+    <dimen name="dp_60">10dp</dimen>
+
+
+</resources>

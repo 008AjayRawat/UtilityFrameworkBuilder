@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Wrap_Wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Match_Match">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Wrap_Match">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Match_Wrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--************Custom Text View Start*********************-->
+
+    <declare-styleable name="CustomFontTxtView">
+        <attr name="customFont" format="string" />
+    </declare-styleable>
+
+    <!--************Custom Text View End*********************-->
+
+
+    <!--**********************Default Dialog Start**********************************-->
+    <style name="Title" parent="android:TextAppearance">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/app_base</item>
+    </style>
+
+    <style name="TitleError" parent="android:TextAppearance">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/material_red</item>
+    </style>
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:windowTitleStyle">@style/Title</item>
+        <item name="android:textColorPrimary">@color/app_text_label</item>
+        <item name="android:background">@color/app_window_bglight_color</item>
+    </style>
+
+    <style name="AppCompatAlertDialogErrorStyle" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:windowTitleStyle">@style/TitleError</item>
+        <item name="android:textColorPrimary">@color/app_text_label</item>
+        <item name="android:background">@color/app_window_bglight_color</item>
+    </style>
+    <!--**********************Default Dialog End**********************************-->
+
+</resources>
