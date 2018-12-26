@@ -1,19 +1,21 @@
 package app.utility.framework.base.activities
 
 import android.app.Activity
+import android.arch.lifecycle.ViewModel
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.os.Bundle
 import android.support.annotation.IdRes
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import app.utility.framework.base.api.ModelApiCallback
 import app.utility.framework.retrofit.RetrofitClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import okhttp3.Request
+import okhttp3.ResponseBody
 import retrofit2.Retrofit
 
 
-abstract class BaseActivity : AppCompatActivity(), View.OnClickListener {
+open class BaseActivity : AppCompatActivity(), View.OnClickListener, ModelApiCallback {
 
     protected val mRetrofitInstance: Retrofit = RetrofitClient.getRetrofitInstance()
 
@@ -47,35 +49,12 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    protected open fun showApiViewLoader(responseCode: Int) {}
-
-    protected open fun hideAPiViewLoader(responseCode: Int) {}
+    protected fun <T : ViewModel> getViewModel(vmName: Class<T>): T {
+        return ViewModelProviders.of(this).get(vmName)
+    }
 
     protected fun <T> getApiService(serviceName: Class<T>): T {
         return mRetrofitInstance.create(serviceName)
-    }
-
-    protected fun <T> enqueueRetrofitCallback(responseCode: Int, call: Call<T>) {
-        showApiViewLoader(responseCode)
-        call.enqueue(object : Callback<T> {
-            override fun onResponse(call: Call<T>, response: Response<T>) {
-                hideAPiViewLoader(responseCode)
-                onPostResponse(responseCode, call, response)
-            }
-
-            override fun onFailure(call: Call<T>, t: Throwable) {
-                hideAPiViewLoader(responseCode)
-                onPostFailure(responseCode, call, t)
-            }
-        })
-    }
-
-    protected open fun <T> onPostResponse(responseCode: Int, call: Call<T>, response: Response<T>) {
-
-    }
-
-    protected open fun <T> onPostFailure(responseCode: Int, call: Call<T>, t: Throwable) {
-
     }
 
     protected fun clearBackStackAndStartNextActivity(activityClass: Class<out Activity>) {
@@ -120,6 +99,21 @@ abstract class BaseActivity : AppCompatActivity(), View.OnClickListener {
         val i = Intent(this, activityClass)
         i.putExtras(bundle)
         startActivityForResult(i, REQ_CODE)
+    }
+
+    override fun onResponse(requestCode: Int, request: Request?, response: Any?) {
+    }
+
+    override fun onFailure(requestCode: Int, request: Request?, t: Throwable) {
+    }
+
+    override fun onError(requestCode: Int, request: Request?, responseBody: ResponseBody?) {
+    }
+
+    override fun onExecutorStart(requestCode: Int) {
+    }
+
+    override fun onExecutorStop(requestCode: Int) {
     }
 
 }

@@ -1,17 +1,20 @@
 package app.utilityframeworkbuilder.models.user.repo
 
-import app.utility.framework.base.RepoCallback
+import app.utility.framework.base.api.ModelApiCallback
 import app.utilityframeworkbuilder.models.user.UserModel
 
 interface IUserRepoContract {
 
-    fun createUser(model: UserModel)
+    //TODO need to be more generic....
 
-    fun updateUser(model: UserModel)
+    fun createUser(requestCode: Int, model: UserModel)
 
-    fun getUser(id: Int, callback: RepoCallback)
+    fun updateUser(requestCode: Int, model: UserModel)
 
-    fun getUserList(page: Int)
+    fun getUser(requestCode: Int, id: Int, callback: ModelApiCallback)
 
+    fun getUserList(requestCode: Int, page: Int, callback: ModelApiCallback)
+
+    fun deleteUser(requestCode: Int, id: Int)
 
 }
