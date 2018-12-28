@@ -7,10 +7,10 @@ import android.os.Bundle
 import android.support.annotation.IdRes
 import android.support.v4.app.Fragment
 import android.view.View
+import app.utility.framework.base.api.IBaseRequest
+import app.utility.framework.base.api.IBaseResponse
 import app.utility.framework.base.api.ModelApiCallback
 import app.utility.framework.retrofit.RetrofitClient
-import okhttp3.Request
-import okhttp3.ResponseBody
 import retrofit2.Retrofit
 
 class BaseFragment : Fragment(), View.OnClickListener, ModelApiCallback {
@@ -88,13 +88,13 @@ class BaseFragment : Fragment(), View.OnClickListener, ModelApiCallback {
         startActivityForResult(i, REQ_CODE)
     }
 
-    override fun onResponse(requestCode: Int, request: Request?, response: Any?) {
+    override fun onResponse(requestCode: Int, request: IBaseRequest?, response: IBaseResponse?) {
     }
 
-    override fun onFailure(requestCode: Int, request: Request?, t: Throwable) {
+    override fun onFailure(requestCode: Int, request: IBaseRequest?, t: Throwable?) {
     }
 
-    override fun onError(requestCode: Int, request: Request?, responseBody: ResponseBody?) {
+    override fun onError(requestCode: Int, request: IBaseRequest?, response: IBaseResponse?) {
     }
 
     override fun onExecutorStart(requestCode: Int) {

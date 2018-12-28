@@ -22,11 +22,12 @@ class UserRemoteRepo : BaseRemoteRepo(), IUserRepoContract {
 
     override fun getUser(requestCode: Int, id: Int, callback: ModelApiCallback) {
         val userApi = getApiService(UserApi::class.java)
-        ApiExecutor.getResponse(requestCode, userApi.getUserList(1), callback)
+        ApiExecutor.getResponse(requestCode, userApi.getUser(1), callback)
     }
 
     override fun getUserList(requestCode: Int, page: Int, callback: ModelApiCallback) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val userApi = getApiService(UserApi::class.java)
+        ApiExecutor.getResponse(requestCode, userApi.getUserList(1), callback)
     }
 
 }

@@ -12,4 +12,4 @@ const val DESC = "desc"
 
 //Task Codes....
 const val USER_LIST = 1
-
+const val VM_USER_LIST = 2

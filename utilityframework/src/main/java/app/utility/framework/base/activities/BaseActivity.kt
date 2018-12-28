@@ -1,6 +1,7 @@
 package app.utility.framework.base.activities
 
 import android.app.Activity
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
@@ -8,14 +9,15 @@ import android.os.Bundle
 import android.support.annotation.IdRes
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import app.utility.framework.base.api.IBaseRequest
+import app.utility.framework.base.api.IBaseResponse
 import app.utility.framework.base.api.ModelApiCallback
+import app.utility.framework.base.response.ResponseState
 import app.utility.framework.retrofit.RetrofitClient
-import okhttp3.Request
-import okhttp3.ResponseBody
 import retrofit2.Retrofit
 
 
-open class BaseActivity : AppCompatActivity(), View.OnClickListener, ModelApiCallback {
+open class BaseActivity : AppCompatActivity(), View.OnClickListener, ModelApiCallback, Observer<ResponseState> {
 
     protected val mRetrofitInstance: Retrofit = RetrofitClient.getRetrofitInstance()
 
@@ -101,13 +103,23 @@ open class BaseActivity : AppCompatActivity(), View.OnClickListener, ModelApiCal
         startActivityForResult(i, REQ_CODE)
     }
 
-    override fun onResponse(requestCode: Int, request: Request?, response: Any?) {
+    override fun onChanged(responseState: ResponseState?) {
+        when (responseState?.status) {
+            ResponseState.Status.EXECUTOR_STARTED -> onExecutorStart(responseState.requestCode)
+            ResponseState.Status.EXECUTOR_FINISHED -> onExecutorStop(responseState.requestCode)
+            ResponseState.Status.SUCCESS -> onResponse(responseState.requestCode, responseState.request, responseState.response)
+            ResponseState.Status.ERROR -> onFailure(responseState.requestCode, responseState.request, responseState.exp)
+        }
     }
 
-    override fun onFailure(requestCode: Int, request: Request?, t: Throwable) {
+
+    override fun onResponse(requestCode: Int, request: IBaseRequest?, response: IBaseResponse?) {
     }
 
-    override fun onError(requestCode: Int, request: Request?, responseBody: ResponseBody?) {
+    override fun onFailure(requestCode: Int, request: IBaseRequest?, t: Throwable?) {
+    }
+
+    override fun onError(requestCode: Int, request: IBaseRequest?, response: IBaseResponse?) {
     }
 
     override fun onExecutorStart(requestCode: Int) {

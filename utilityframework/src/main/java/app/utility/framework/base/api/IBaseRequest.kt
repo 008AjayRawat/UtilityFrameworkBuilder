@@ -1,16 +1,28 @@
 package app.utility.framework.base.api
 
+/**
+ * @author Ajay Rawat
+ *
+ * Use this to create Common Request Network API Client,
+ * Will take care of SOC for ModelApiCallback Request
+ *
+ * Every Network Client must have to implement this IBaseRequest interface, to provide common request handler
+
+ */
 interface IBaseRequest {
 
-    //TODO Use this to create Independent Network API Client,
-    //TODO Will take care of SOC for ModelApiCallback Request.....
-    //TODO Every Network Client must have to implement this IBaseRequest interface, to provide common request handler..
+    fun getScheme(): String
 
-    fun getStatusCode()
+    fun getUrl(): String
 
-    fun getUrl()
+    fun getHost(): String
 
-    fun getParam()
+    fun getEncodedParams()
 
-    fun getMethodType()
+    fun getContentType(): String
+
+    fun getMethodType(): String
+
+    fun getRequest(): Any?
+
 }

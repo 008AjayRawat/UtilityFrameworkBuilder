@@ -2,11 +2,12 @@ package app.utilityframeworkbuilder.viewModels
 
 import android.app.Application
 import android.arch.lifecycle.MutableLiveData
+import app.utility.framework.base.api.IBaseRequest
+import app.utility.framework.base.api.IBaseResponse
 import app.utility.framework.base.response.ResponseState
 import app.utility.framework.base.viewModel.BaseViewModel
 import app.utilityframeworkbuilder.models.user.repo.IUserRepoContract
 import app.utilityframeworkbuilder.models.user.repo.UserRepoProvider
-import okhttp3.Request
 
 class ActivityVM(application: Application) : BaseViewModel(application) {
 
@@ -23,9 +24,9 @@ class ActivityVM(application: Application) : BaseViewModel(application) {
         return responseState
     }
 
-    override fun onResponse(requestCode: Int, request: Request?, response: Any?) {
+    override fun onResponse(requestCode: Int, request: IBaseRequest?, response: IBaseResponse?) {
         super.onResponse(requestCode, request, response)
-        responseState.postValue(ResponseState(requestCode, ResponseState.Status.SUCCESS, response, null))
+        //Note: We can handle the repo response here or we can avoid and handle in view....
     }
 
 }
