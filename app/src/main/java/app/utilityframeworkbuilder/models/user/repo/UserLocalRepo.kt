@@ -1,6 +1,6 @@
 package app.utilityframeworkbuilder.models.user.repo
 
-import app.utility.framework.base.api.ModelApiCallback
+import app.utility.framework.base.api.ApiCallback
 import app.utilityframeworkbuilder.models.user.UserModel
 
 class UserLocalRepo : IUserRepoContract {
@@ -13,7 +13,7 @@ class UserLocalRepo : IUserRepoContract {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun getUser(requestCode: Int, id: Int, callback: ModelApiCallback) {
+    override fun getUser(requestCode: Int, id: Int, callback: ApiCallback) {
         //TODO have to use Rx Java or something similar,
 //        callback.onExecutorStart(requestCode)
 //        callback.onExecutorStop(requestCode)
@@ -22,7 +22,7 @@ class UserLocalRepo : IUserRepoContract {
 //        callback.onFailure(requestCode, null, Exception())
     }
 
-    override fun getUserList(requestCode: Int, page: Int, callback: ModelApiCallback) {
+    override fun getUserList(requestCode: Int, page: Int, callback: ApiCallback) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 

@@ -1,6 +1,6 @@
 package app.utility.framework.base.api
 
-interface ModelApiCallback {
+interface ApiCallback {
 
     fun onExecutorStart(requestCode: Int)
 

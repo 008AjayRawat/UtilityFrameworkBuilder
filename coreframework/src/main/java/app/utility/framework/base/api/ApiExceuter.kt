@@ -8,7 +8,7 @@ import retrofit2.Response
 
 class ApiExecutor {
     companion object {
-        fun <T> getResponse(requestCode: Int, call: Call<T>, callback: ModelApiCallback) {
+        fun <T> getResponse(requestCode: Int, call: Call<T>, callback: ApiCallback) {
             callback.onExecutorStart(requestCode)
             call.enqueue(object : Callback<T> {
                 override fun onResponse(call: Call<T>, response: Response<T>) {
@@ -25,7 +25,6 @@ class ApiExecutor {
                     callback.onExecutorStop(requestCode)
 
                     val requestHandler: IBaseRequest = RetrofitRequest(call)
-
                     callback.onFailure(requestCode, requestHandler, t)
                 }
             })

@@ -7,13 +7,13 @@ import android.os.Bundle
 import android.support.annotation.IdRes
 import android.support.v4.app.Fragment
 import android.view.View
+import app.utility.framework.base.api.ApiCallback
 import app.utility.framework.base.api.IBaseRequest
 import app.utility.framework.base.api.IBaseResponse
-import app.utility.framework.base.api.ModelApiCallback
 import app.utility.framework.retrofit.RetrofitClient
 import retrofit2.Retrofit
 
-class BaseFragment : Fragment(), View.OnClickListener, ModelApiCallback {
+abstract class BaseFragment : Fragment(), View.OnClickListener, ApiCallback {
 
     private var v: View? = null
     protected val mRetrofitInstance: Retrofit = RetrofitClient.getRetrofitInstance()

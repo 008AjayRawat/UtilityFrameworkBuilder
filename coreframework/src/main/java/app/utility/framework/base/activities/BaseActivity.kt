@@ -1,25 +1,17 @@
 package app.utility.framework.base.activities
 
 import android.app.Activity
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.os.Bundle
 import android.support.annotation.IdRes
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import app.utility.framework.base.api.IBaseRequest
-import app.utility.framework.base.api.IBaseResponse
-import app.utility.framework.base.api.ModelApiCallback
-import app.utility.framework.base.response.ResponseState
 import app.utility.framework.retrofit.RetrofitClient
 import retrofit2.Retrofit
 
+abstract class BaseActivity : AppCompatActivity(), View.OnClickListener {
 
-open class BaseActivity : AppCompatActivity(), View.OnClickListener, ModelApiCallback, Observer<ResponseState> {
-
-    protected val mRetrofitInstance: Retrofit = RetrofitClient.getRetrofitInstance()
+    private val mRetrofitInstance: Retrofit = RetrofitClient.getRetrofitInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,10 +41,6 @@ open class BaseActivity : AppCompatActivity(), View.OnClickListener, ModelApiCal
         for (i in viewIds) {
             findViewById<View>(i).visibility = View.VISIBLE
         }
-    }
-
-    protected fun <T : ViewModel> getViewModel(vmName: Class<T>): T {
-        return ViewModelProviders.of(this).get(vmName)
     }
 
     protected fun <T> getApiService(serviceName: Class<T>): T {
@@ -101,31 +89,6 @@ open class BaseActivity : AppCompatActivity(), View.OnClickListener, ModelApiCal
         val i = Intent(this, activityClass)
         i.putExtras(bundle)
         startActivityForResult(i, REQ_CODE)
-    }
-
-    override fun onChanged(responseState: ResponseState?) {
-        when (responseState?.status) {
-            ResponseState.Status.EXECUTOR_STARTED -> onExecutorStart(responseState.requestCode)
-            ResponseState.Status.EXECUTOR_FINISHED -> onExecutorStop(responseState.requestCode)
-            ResponseState.Status.SUCCESS -> onResponse(responseState.requestCode, responseState.request, responseState.response)
-            ResponseState.Status.ERROR -> onFailure(responseState.requestCode, responseState.request, responseState.exp)
-        }
-    }
-
-
-    override fun onResponse(requestCode: Int, request: IBaseRequest?, response: IBaseResponse?) {
-    }
-
-    override fun onFailure(requestCode: Int, request: IBaseRequest?, t: Throwable?) {
-    }
-
-    override fun onError(requestCode: Int, request: IBaseRequest?, response: IBaseResponse?) {
-    }
-
-    override fun onExecutorStart(requestCode: Int) {
-    }
-
-    override fun onExecutorStop(requestCode: Int) {
     }
 
 }

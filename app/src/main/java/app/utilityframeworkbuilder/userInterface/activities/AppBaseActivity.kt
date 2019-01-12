@@ -1,7 +1,7 @@
 package app.utilityframeworkbuilder.userInterface.activities
 
-import app.utility.framework.base.activities.BaseActivity
+import app.utility.framework.base.activities.BaseViewModelActivity
 
-open class AppBaseActivity : BaseActivity() {
+open class AppBaseActivity : BaseViewModelActivity() {
 
 }

@@ -1,9 +1,11 @@
 package app.utilityframeworkbuilder.models.user.repo
 
+import app.utility.framework.base.repo.RepoCallback
+
 class UserRepoProvider {
     companion object {
-        fun getUerRepo(): IUserRepoContract {
-            return UserRemoteRepo()
+        fun getUerRepo(callback: RepoCallback): IUserRepoContract {
+            return UserRemoteRepo(callback)
         }
     }
 
