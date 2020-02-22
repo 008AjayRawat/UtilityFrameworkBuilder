@@ -1,6 +1,6 @@
 package app.utilityframeworkbuilder.models.user.repo
 
-import app.utility.framework.base.api.ApiCallback
+import app.framework.base.api.ApiCallback
 import app.utilityframeworkbuilder.models.user.UserModel
 
 class UserLocalRepo : IUserRepoContract {

@@ -1,9 +1,9 @@
 package app.utilityframeworkbuilder.userInterface.activities
 
 import android.os.Bundle
-import app.utility.framework.base.activities.BaseViewModelActivity
-import app.utility.framework.base.repo.Error
-import app.utility.framework.base.repo.ExecutorState
+import app.framework.base.activities.BaseViewModelActivity
+import app.framework.base.repo.Error
+import app.framework.base.repo.ExecutorState
 import app.utilityframeworkbuilder.R
 import app.utilityframeworkbuilder.viewModels.ActivityViewModel
 

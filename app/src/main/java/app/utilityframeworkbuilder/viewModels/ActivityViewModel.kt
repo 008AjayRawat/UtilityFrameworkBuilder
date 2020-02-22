@@ -2,8 +2,8 @@ package app.utilityframeworkbuilder.viewModels
 
 import android.app.Application
 import android.arch.lifecycle.MutableLiveData
-import app.utility.framework.base.response.LiveState
-import app.utility.framework.base.viewModel.BaseRepoViewModel
+import app.framework.base.response.LiveState
+import app.framework.base.viewModel.BaseRepoViewModel
 import app.utilityframeworkbuilder.models.user.repo.IUserRepoContract
 import app.utilityframeworkbuilder.models.user.repo.UserRepoProvider
 

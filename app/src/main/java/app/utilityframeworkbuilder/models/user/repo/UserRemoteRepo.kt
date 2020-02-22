@@ -1,13 +1,13 @@
 package app.utilityframeworkbuilder.models.user.repo
 
-import app.utility.framework.base.api.ApiCallback
-import app.utility.framework.base.api.ApiExecutor
-import app.utility.framework.base.api.IBaseRequest
-import app.utility.framework.base.api.IBaseResponse
-import app.utility.framework.base.repo.BaseRemoteRepo
-import app.utility.framework.base.repo.Error
-import app.utility.framework.base.repo.ExecutorState
-import app.utility.framework.base.repo.RepoCallback
+import app.framework.base.api.ApiCallback
+import app.framework.base.api.ApiExecutor
+import app.framework.base.api.IBaseRequest
+import app.framework.base.api.IBaseResponse
+import app.framework.base.repo.BaseRemoteRepo
+import app.framework.base.repo.Error
+import app.framework.base.repo.ExecutorState
+import app.framework.base.repo.RepoCallback
 import app.utilityframeworkbuilder.models.user.UserModel
 import app.utilityframeworkbuilder.networking.api.user.UserApi
 

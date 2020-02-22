@@ -2,9 +2,9 @@ package app.utilityframeworkbuilder.userInterface.activities
 
 import android.os.Bundle
 import android.view.View
-import app.utility.framework.base.api.ApiExecutor
-import app.utility.framework.base.api.IBaseRequest
-import app.utility.framework.base.api.IBaseResponse
+import app.framework.base.api.ApiExecutor
+import app.framework.base.api.IBaseRequest
+import app.framework.base.api.IBaseResponse
 import app.utilityframeworkbuilder.R
 import app.utilityframeworkbuilder.appUtils.USER_LIST
 import app.utilityframeworkbuilder.networking.api.user.UserApi
