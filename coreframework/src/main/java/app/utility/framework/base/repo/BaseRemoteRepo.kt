@@ -1,6 +1,6 @@
 package app.utility.framework.base.repo
 
-import app.utility.framework.retrofit.RetrofitClient
+import app.utility.framework.apiexecutors.retrofit.RetrofitClient
 import retrofit2.Retrofit
 
 open class BaseRemoteRepo {

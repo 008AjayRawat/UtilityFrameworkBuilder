@@ -1,4 +1,4 @@
-package app.utility.framework.retrofit
+package app.utility.framework.apiexecutors.retrofit
 
 import app.utility.framework.base.api.IBaseResponse
 import retrofit2.Response

@@ -8,6 +8,7 @@ buildscript {
     ext.retrofit_version = "2.4.0"
     ext.gsonconverter_version = "2.4.0"
     ext.rxkotlin_version = "2.3.0"
+    ext.dagger_version="2.26"
 
     repositories {
         google()

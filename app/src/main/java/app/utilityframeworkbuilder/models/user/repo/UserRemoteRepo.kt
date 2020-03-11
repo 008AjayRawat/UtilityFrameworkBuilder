@@ -13,25 +13,25 @@ import app.utilityframeworkbuilder.networking.api.user.UserApi
 
 class UserRemoteRepo(private val callback: RepoCallback) : BaseRemoteRepo(), IUserRepoContract, ApiCallback {
 
-    override fun createUser(requestCode: Int, model: UserModel) {
-    }
-
-    override fun updateUser(requestCode: Int, model: UserModel) {
-    }
-
-    override fun deleteUser(requestCode: Int, id: Int) {
-    }
-
-    override fun getUser(requestCode: Int, id: Int, callback: RepoCallback) {
-        val userApi = getApiService(UserApi::class.java)
-        ApiExecutor.getResponse(requestCode, userApi.getUser(1), this)
-    }
-
-
-    override fun getUserList(requestCode: Int, page: Int, callback: RepoCallback) {
-        val userApi = getApiService(UserApi::class.java)
-        ApiExecutor.getResponse(requestCode, userApi.getUserList(1), this)
-    }
+//    override fun createUser(requestCode: Int, model: UserModel) {
+//    }
+//
+//    override fun updateUser(requestCode: Int, model: UserModel) {
+//    }
+//
+//    override fun deleteUser(requestCode: Int, id: Int) {
+//    }
+//
+//    override fun getUser(requestCode: Int, id: Int, callback: RepoCallback) {
+//        val userApi = getApiService(UserApi::class.java)
+////        ApiExecutor.getResponse(requestCode, userApi.getUser(1), this)
+//    }
+//
+//
+//    override fun getUserList(requestCode: Int, page: Int, callback: RepoCallback) {
+//        val userApi = getApiService(UserApi::class.java)
+////        ApiExecutor.getResponse(requestCode, userApi.getUserList(1), this)
+//    }
 
     override fun onExecutorStart(requestCode: Int) {
         callback.onStateChanged(requestCode, ExecutorState.STARTED)

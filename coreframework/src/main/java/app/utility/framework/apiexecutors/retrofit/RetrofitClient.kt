@@ -1,4 +1,4 @@
-package app.utility.framework.retrofit
+package app.utility.framework.apiexecutors.retrofit
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

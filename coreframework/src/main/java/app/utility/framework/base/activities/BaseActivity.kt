@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.support.annotation.IdRes
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import app.utility.framework.retrofit.RetrofitClient
+import app.utility.framework.apiexecutors.retrofit.RetrofitClient
 import retrofit2.Retrofit
 
 abstract class BaseActivity : AppCompatActivity(), View.OnClickListener {

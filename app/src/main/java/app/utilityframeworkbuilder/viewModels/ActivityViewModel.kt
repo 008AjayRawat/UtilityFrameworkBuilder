@@ -13,7 +13,7 @@ class ActivityViewModel(application: Application) : BaseRepoViewModel(applicatio
     private var mUserRepo: IUserRepoContract = UserRepoProvider.getUerRepo(this)
 
     fun getUser(requestCode: Int): MutableLiveData<LiveState> {
-        mUserRepo.getUser(requestCode, 1, this)
+//        mUserRepo.getUser(requestCode, 1, this)
         return observerRequestCode(requestCode)
     }
 

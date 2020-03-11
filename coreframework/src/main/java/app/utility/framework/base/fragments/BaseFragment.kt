@@ -10,7 +10,7 @@ import android.view.View
 import app.utility.framework.base.api.ApiCallback
 import app.utility.framework.base.api.IBaseRequest
 import app.utility.framework.base.api.IBaseResponse
-import app.utility.framework.retrofit.RetrofitClient
+import app.utility.framework.apiexecutors.retrofit.RetrofitClient
 import retrofit2.Retrofit
 
 abstract class BaseFragment : Fragment(), View.OnClickListener, ApiCallback {

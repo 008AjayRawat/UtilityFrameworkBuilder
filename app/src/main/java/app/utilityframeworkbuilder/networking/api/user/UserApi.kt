@@ -1,5 +1,6 @@
 package app.utilityframeworkbuilder.networking.api.user
 
+import app.utility.framework.base.api.IApiRequestProvider
 import app.utilityframeworkbuilder.networking.api.user.response.UserListRepoResponse
 import app.utilityframeworkbuilder.networking.api.user.response.UserRepoResponse
 import okhttp3.ResponseBody
